@@ -9,7 +9,6 @@
 	compatible = "wavlink,wl-wn572hg3", "ralink,mt7620a-soc";
 	model = "Wavlink WL-WN572HG3";
 
-
 	keys {
 		compatible = "gpio-keys";
 
