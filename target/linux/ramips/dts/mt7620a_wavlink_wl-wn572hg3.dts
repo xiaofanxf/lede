@@ -9,54 +9,6 @@
 	compatible = "wavlink,wl-wn572hg3", "ralink,mt7620a-soc";
 	model = "Wavlink WL-WN572HG3";
 
-	aliases {
-		led-boot = &led_status_high;
-		led-failsafe = &led_status_high;
-		led-running = &led_activity_mid;
-		led-upgrade = &led_activity_mid;
-	};
-
-	leds {
-		compatible = "gpio-leds";
-
-		led-0 {
-			function = LED_FUNCTION_LAN;
-			color = <LED_COLOR_ID_GREEN>;
-			gpios = <&gpio2 1 GPIO_ACTIVE_LOW>;
-		};
-
-		led-1 {
-			function = LED_FUNCTION_WAN;
-			color = <LED_COLOR_ID_GREEN>;
-			gpios = <&gpio2 4 GPIO_ACTIVE_LOW>;
-		};
-
-		led-2 {
-			function = LED_FUNCTION_WLAN;
-			color = <LED_COLOR_ID_GREEN>;
-			gpios = <&gpio3 0 GPIO_ACTIVE_LOW>;
-			linux,default-trigger = "phy1tpt";
-		};
-
-		led-3 {
-			function = LED_FUNCTION_WLAN_5GHZ;
-			color = <LED_COLOR_ID_GREEN>;
-			gpios = <&gpio2 3 GPIO_ACTIVE_LOW>;
-			linux,default-trigger = "phy0tpt";
-		};
-
-		led_activity_mid: led-4 {
-			function = LED_FUNCTION_ACTIVITY;
-			color = <LED_COLOR_ID_GREEN>;
-			gpios = <&gpio0 12 GPIO_ACTIVE_LOW>;
-		};
-
-		led_status_high: led-5 {
-			function = LED_FUNCTION_STATUS;
-			color = <LED_COLOR_ID_GREEN>;
-			gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
-		};
-	};
 
 	keys {
 		compatible = "gpio-keys";
@@ -198,7 +150,7 @@
 		reg = <0x0000 0 0 0 0>;
 		ieee80211-freq-limit = <5000000 6000000>;
 
-		nvmem-cells = <&eeprom_factory_8000>;
+		nvmem-cells = <&eeprom_factory_0x8000>;
 		nvmem-cell-names = "eeprom";
 	};
 };
